@@ -1,0 +1,6 @@
+framework module Pods_ImaSdkTest {
+  umbrella header "Pods-ImaSdkTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
