@@ -14,9 +14,12 @@ class IMAViewController: UIViewController, IMAAdsLoaderDelegate, IMAAdsManagerDe
 
 
 	//ad VAST Url to be played prior to video, timestamp is ISO 8601
-	static let AdTagURLString = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
+	static let AdTagURLString = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=434564566"
 
 	static let AdTag2 = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=2020-06-09T00:17:57+0000"
+
+	static let AdTagTest = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator="
+
 
 	var adsLoader: IMAAdsLoader!
 	var adsManager: IMAAdsManager!
@@ -34,20 +37,18 @@ class IMAViewController: UIViewController, IMAAdsLoaderDelegate, IMAAdsManagerDe
     self.view.backgroundColor = UIColor.black;
     setUpContentPlayer()
 	setUpAdsLoader()
+
   }
 
-	@IBAction func requestAdClicked(_ sender: Any) {
-		showContentPlayer()
-		requestAds()
-	}
+
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-
+		requestAds()
 	}
 
   func setUpContentPlayer() {
     // Load AVPlayer with path to our content.
-		let contentURL = URL(string: IMAViewController.Content1)!
+		let contentURL = URL(string: IMAViewController.Content2)!
 		   let player = AVPlayer(url: contentURL)
 		   playerViewController = AVPlayerViewController()
 		   playerViewController.player = player
@@ -59,8 +60,7 @@ class IMAViewController: UIViewController, IMAAdsLoaderDelegate, IMAAdsManagerDe
 			   name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
 			   object: player.currentItem);
 
-			hideContentPlayer()
-		   //showContentPlayer()
+		showContentPlayer()
 
   }
 
@@ -73,12 +73,19 @@ class IMAViewController: UIViewController, IMAAdsLoaderDelegate, IMAAdsManagerDe
 		//create ad display for ad rendering
 		let adDisplayContainer = IMAAdDisplayContainer(adContainer: self.view)
 		//create an ad request with our ad tag, display container
-		let request = IMAAdsRequest(
-        adTagUrl: IMAViewController.AdTag2,
-        adDisplayContainer: adDisplayContainer,
-        contentPlayhead: contentPlayhead,
-        userContext: nil)
-		adsLoader.requestAds(with: request)
+
+		let path = Bundle.main.path(forResource: "samplevast", ofType: "xml")
+
+		do {
+			let string = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+				print(string)
+				let requestWithResponse = IMAAdsRequest(adsResponse: string, adDisplayContainer: adDisplayContainer, contentPlayhead: contentPlayhead, userContext: nil)
+
+				adsLoader.requestAds(with: requestWithResponse)
+
+		} catch {
+			print("file not found")
+		}
 	}
 
 	@objc func contentDidFinishPlaying(_ notification: Notification) {

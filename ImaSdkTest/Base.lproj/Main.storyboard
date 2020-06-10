@@ -47,16 +47,6 @@
                     <view key="view" contentMode="scaleToFill" id="QFn-ah-poa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L58-Ab-cfM">
-                                <rect key="frame" x="63" y="110" width="79" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Request Ad"/>
-                                <connections>
-                                    <action selector="requestAdClicked:" destination="X8t-Lj-76d" eventType="touchUpInside" id="LVe-rc-r2e"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hJ1-Id-gS6"/>
                     </view>

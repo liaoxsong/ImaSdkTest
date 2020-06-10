@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B68AEE8976332EBFCB318C9 /* Pods_ImaSdkTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6DF70242927DA7172A272 /* Pods_ImaSdkTest.framework */; };
+		E45E82DF2490CBCF00034632 /* samplevast.xml in Resources */ = {isa = PBXBuildFile; fileRef = E45E82DE2490CBCF00034632 /* samplevast.xml */; };
 		E47ED0D4248A5A1A002D271C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED0D3248A5A1A002D271C /* AppDelegate.swift */; };
 		E47ED0D6248A5A1A002D271C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED0D5248A5A1A002D271C /* SceneDelegate.swift */; };
 		E47ED0D8248A5A1A002D271C /* IMAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47ED0D7248A5A1A002D271C /* IMAViewController.swift */; };
@@ -32,6 +33,7 @@
 		15A6DF70242927DA7172A272 /* Pods_ImaSdkTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImaSdkTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4642286CF3901D0C1D19C8EC /* Pods-ImaSdkTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaSdkTest.release.xcconfig"; path = "Target Support Files/Pods-ImaSdkTest/Pods-ImaSdkTest.release.xcconfig"; sourceTree = "<group>"; };
 		954D05F5AA08D75D5B7578B4 /* Pods-ImaSdkTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaSdkTest.debug.xcconfig"; path = "Target Support Files/Pods-ImaSdkTest/Pods-ImaSdkTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E45E82DE2490CBCF00034632 /* samplevast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = samplevast.xml; sourceTree = SOURCE_ROOT; };
 		E47ED0D0248A5A1A002D271C /* ImaSdkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImaSdkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47ED0D3248A5A1A002D271C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E47ED0D5248A5A1A002D271C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		E47ED0D2248A5A1A002D271C /* ImaSdkTest */ = {
 			isa = PBXGroup;
 			children = (
+				E45E82DE2490CBCF00034632 /* samplevast.xml */,
 				E47ED0D3248A5A1A002D271C /* AppDelegate.swift */,
 				E47ED0D5248A5A1A002D271C /* SceneDelegate.swift */,
 				E47ED0D9248A5A1A002D271C /* Main.storyboard */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47ED0E0248A5A21002D271C /* LaunchScreen.storyboard in Resources */,
+				E45E82DF2490CBCF00034632 /* samplevast.xml in Resources */,
 				E47ED0DD248A5A21002D271C /* Assets.xcassets in Resources */,
 				E47ED0DB248A5A1A002D271C /* Main.storyboard in Resources */,
 			);
